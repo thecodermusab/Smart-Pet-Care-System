@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Pet Care Dashboard</title>
+    <link rel="stylesheet" href="Dashbord-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <a href="index.html"><h1>SMART PET CARE SYSTEM</h1></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Device</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <img src="https://i.ibb.co/QMTpZWP/Untitled-15-removebg-preview.png" alt="User" class="user-icon">
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+       
+            <div class="pet-profile">
+    <h2>Pet Information</h2>
+    <div class="profile-container">
+        <img src="https://i.ibb.co/QMTpZWP/Untitled-15-removebg-preview.png" alt="Pet Profile" class="profile-picture">
+        <div class="profile-details">
+            <p><strong>Weight:</strong> 4kg</p>
+            <p><strong>Added:</strong> 17/12/2024</p>
+        </div>
+    </div>
+</div>
+
+       
+
+        <section class="health-metric-summary">
+        <h2>Health Metric Summary</h2>
+        <div class="metric-buttons">
+            <button class="metric-btn active">🐾 Daily</button>
+            <button class="metric-btn">🐾 Monthly</button>
+        </div>
+        <div class="metrics-bar">
+            <div class="metric">
+                <p>Water</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="metric">
+                <p>Activity Time</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="metric">
+                <p>Food</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="chart-container">
+  <!-- Pet Weight Trend -->
+  <div class="chart-box">
+    <h3>Pet Weight Trend</h3>
+    <canvas id="weightChart"></canvas>
+    <div class="chart-actions">
+      <button class="filter-btn">Filter</button>
+      <button class="export-btn">Export</button>
+    </div>
+  </div>
+
+  <!-- Pet Heart Rate Trends -->
+  <div class="chart-box">
+    <h3>Pet Heart Rate Trends</h3>
+    <canvas id="heartRateChart"></canvas>
+    <div class="chart-actions">
+      <button class="filter-btn">Filter</button>
+      <button class="export-btn">Export</button>
+    </div>
+  </div>
+
+  <!-- Daily Activities Burn -->
+  <div class="chart-box">
+    <h3>Daily Activities Burn</h3>
+    <canvas id="activitiesChart"></canvas>
+    <div class="chart-actions">
+      <button class="filter-btn">Filter</button>
+      <button class="export-btn">Export</button>
+    </div>
+  </div>
+</div>
+     </main> 
+  </section>
+
+        <div class="lifespan-tracker">
+    <h2>Lifespan Tracker</h2>
+    <div class="pet-cards">
+        <div class="pet-card">
+            <img src="Cat 1.jpeg" alt="Buddy">
+            <h3>Buddy</h3>
+            <p>Last check-up: Oct 10</p>
+            <p>Vaccinations up-to-date</p>
+            <button class="update-btn">Update Records</button>
+        </div>
+        <div class="pet-card">
+            <img src="Dog 1.jpeg" alt="Whiskers">
+            <h3>Whiskers</h3>
+            <p>Last check-up: Sep 21</p>
+            <p>Needs dental cleaning</p>
+            <button class="update-btn">Update Records</button>
+        </div>
+        <div class="pet-card">
+            <img src="Cat 2.jpeg" alt="Max">
+            <h3>Max</h3>
+            <p>Last check-up: Aug 15</p>
+            <p>New diet plan started</p>
+            <button class="update-btn">Update Records</button>
+        </div>
+    </div>
+    <button class="add-pet-btn">+ Add New Pet</button>
+</div>
+
+    
+     <script>
+        const weightCtx = document.getElementById('weightChart').getContext('2d');
+        const weightChart = new Chart(weightCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Weight',
+                    data: [10, 12, 15, 14, 16, 18],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                }]
+            }
+        });
+
+        const heartRateCtx = document.getElementById('heartRateChart').getContext('2d');
+        const heartRateChart = new Chart(heartRateCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Dog', 'Cat', 'Rabbit'],
+                datasets: [{
+                    data: [30, 45, 25],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                }]
+            }
+        });
+
+        const activitiesCtx = document.getElementById('activitiesChart').getContext('2d');
+        const activitiesChart = new Chart(activitiesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Walking', 'Running', 'Playing'],
+                datasets: [
+                    {
+                        label: 'Jan',
+                        data: [10, 15, 20],
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)'
+                    },
+                    {
+                        label: 'Feb',
+                        data: [20, 10, 15],
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)'
+                    }
+                ]
+            }
+        });
+       
+       document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.metric-btn');
+    const progressBars = document.querySelectorAll('.progress');
+
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Change progress values based on the selected button
+            if (index === 0) { // Daily
+                progressBars[0].style.width = '70%';
+                progressBars[1].style.width = '50%';
+                progressBars[2].style.width = '80%';
+            } else if (index === 1) { // Monthly
+                progressBars[0].style.width = '90%';
+                progressBars[1].style.width = '65%';
+                progressBars[2].style.width = '75%';
+            }
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

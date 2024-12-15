@@ -1,0 +1,376 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: #fff;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    
+  }
+  
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #003366;
+    white-space: nowrap;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  nav .menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav .menu li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  nav .menu .cta-item {
+    margin-left: 1rem; /* Adds space between Contact and Let's Talk */
+  }
+  
+  nav .menu .cta-btn {
+    background-color: #003366;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  nav .menu .cta-btn:hover {
+    background-color: #00509e;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header Section */
+  header {
+    background-color: #fff;
+    padding: 1rem 0;
+    
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #003366;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin-right: 1rem;
+  }
+  
+  nav .menu li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  nav .cta-btn {
+    background-color: #003366;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  nav .cta-btn:hover {
+    background-color: #002244;
+  }
+  
+  
+  
+  /* Appointment Section */
+  .appointment-section {
+    position: relative;
+    background: url('https://i.ibb.co/jTNDyD6/Untitled-14.png') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    margin-top:3rem;
+    padding: 2rem;
+  }
+  
+  .appointment-form {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+  }
+  
+  .appointment-form h2 {
+    font-size: 1.8rem;
+    color: #003366;
+    margin-bottom: 1.5rem;
+  }
+  
+  .appointment-form .form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .appointment-form input,
+  .appointment-form select,
+  .appointment-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+  }
+  
+  .appointment-form button {
+    background: #56e39f;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .appointment-form button:hover {
+    background: #45c285;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .appointment-form {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  
+  
+  /* Contact Section */
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:6rem;
+    padding: 3rem 5rem;
+    background: #fff;
+  }
+  
+  .contact-info {
+    width: 45%;
+    text-align: left;
+  }
+  
+  .contact-info h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adds space between icon and text */
+  }
+  
+  .contact-info i {
+    color: #003366;
+    font-size: 1.5rem;
+  }
+  
+  /* Table Section */
+  .opening-hours {
+    width: 45%;
+    text-align: left;
+  }
+  
+  .opening-hours h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f9f9f9;
+  }
+  
+  thead {
+    background: #e0f7fa;
+  }
+  
+  thead th {
+    padding: 1rem;
+    color: #003366;
+    text-align: left;
+  }
+  
+  tbody td {
+    padding: 0.8rem;
+    border-top: 1px solid #ddd;
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+  
+    .contact-info,
+    .opening-hours {
+      width: 100%;
+      text-align: center;
+    }
+  
+    table {
+      margin-top: 1rem;
+    }
+  }
+  
+  
+  
+  
+  
+  /* Footer Section */
+  .footer {
+    background-color: #fff;
+    color: #333;
+    margin-top:5rem;
+    padding: 2rem 1rem;
+    
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer-info {
+    text-align: center;
+  }
+  
+  .footer-info p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  
+  .footer-links {
+    
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    
+  }
+  
+  .footer-links li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links li a:hover {
+    color: #003366;
+  }
+  
+  .footer-social {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .footer-social a {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+  }
+  
+  .footer-social a:hover {
+    color: #003366;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .footer-info,
+    .footer-links,
+    .footer-social {
+      text-align: center;
+    }
+  
+    .footer-links {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+  
